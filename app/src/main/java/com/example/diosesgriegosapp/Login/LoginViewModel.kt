@@ -48,23 +48,6 @@ class LoginViewModel : ViewModel() {
         }
     }
 
-    fun listarUsuarios() {
-        viewModelScope.launch {
-            _isLoading.value = true
-
-            val response: Response<List<Usuario>> = UserNetwork.retrofit.listarUsuarios()
-
-            if (response.isSuccessful) {
-                _myResponseList.value = response.body()
-                _errorCode.value = response.code()
-            } else {
-                _myResponseList.value = emptyList()
-                _errorCode.value = response.code()
-            }
-            _isLoading.value = false
-        }
-    }
-
     fun CrearUsuarioVM(usuario: Usuario) {
         viewModelScope.launch {
             val response: Response<Boolean> = UserNetwork.retrofit.registrarUsuario(usuario)

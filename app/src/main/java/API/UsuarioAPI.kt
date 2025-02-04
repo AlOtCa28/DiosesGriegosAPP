@@ -16,7 +16,7 @@ interface UsuarioAPI {
     suspend fun iniciarSesion(@Body usuerData: UsuarioLogIn): Response<Usuario?>
 
     @GET("usuarios/listado")
-    suspend fun listarUsuarios(): Response<List<Usuario>>
+    suspend fun listarUsuarios(): Response<MutableList<Usuario>>
 
     @POST("usuarios/registrar")
     suspend fun registrarUsuario(@Body usuario: Usuario): Response<Boolean>
