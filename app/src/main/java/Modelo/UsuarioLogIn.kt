@@ -8,9 +8,9 @@ data class UsuarioLogIn (
     val nombre:String? = null,
 
     @SerializedName("email")
-    val correo:String? = null,
+    val email:String? = null,
 
     @SerializedName("contraseña")
-    val contrasena:String? = null
+    val contraseña:String? = null
 
 ):Serializable

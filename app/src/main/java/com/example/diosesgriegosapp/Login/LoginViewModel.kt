@@ -33,8 +33,6 @@ class LoginViewModel : ViewModel() {
         viewModelScope.launch {
             _isLoading.value = true
 
-            Log.d("LoginViewModel", "loginVM: $userData")
-
             val response: Response<Usuario?> = UserNetwork.retrofit.iniciarSesion(userData)
 
             if (response.isSuccessful) {

@@ -14,7 +14,7 @@ data class Usuario(
     val email: String? = null,
 
     @SerializedName("contraseña")
-    val contrasena: String? = null,
+    val contraseña: String? = null,
 
     @SerializedName("rol")
     val rol: Int? = null,
