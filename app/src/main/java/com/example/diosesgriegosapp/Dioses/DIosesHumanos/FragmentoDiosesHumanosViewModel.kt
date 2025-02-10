@@ -41,4 +41,34 @@ class FragmentoDiosesHumanosViewModel : ViewModel() {
             _isLoading.value = false
         }
     }
+
+    fun borrarUsuarioVM(id: Int) {
+        viewModelScope.launch {
+            _isLoading.value = true
+            var response: Response<Boolean> = UserNetwork.retrofit.borrarUsuario(id)
+
+            if (response.isSuccessful) {
+                _resOperacion.value = response.body()
+            } else {
+                _resOperacion.value = false
+                _errorCode.value = response.code()
+            }
+            _isLoading.value = false
+        }
+    }
+
+    fun getUsuarioPorIdVM(id: Int) {
+        viewModelScope.launch {
+            _isLoading.value = true
+            var response: Response<Usuario> = UserNetwork.retrofit.obtenerUsuarioPorId(id)
+
+            if (response.isSuccessful) {
+                _myResponse.value = listOf(response.body()!!)
+            } else {
+                _myResponse.value = emptyList()
+                _errorCode.value = response.code()
+            }
+            _isLoading.value = false
+        }
+    }
 }

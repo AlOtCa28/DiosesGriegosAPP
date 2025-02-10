@@ -4,6 +4,7 @@ import Modelo.Usuario.Usuario
 import Modelo.Usuario.UsuarioLogIn
 import retrofit2.Response
 import retrofit2.http.Body
+import retrofit2.http.DELETE
 import retrofit2.http.GET
 import retrofit2.http.POST
 import retrofit2.http.Path
@@ -20,4 +21,7 @@ interface UsuarioAPI {
 
     @POST("usuarios/registrar")
     suspend fun registrarUsuario(@Body usuario: Usuario): Response<Boolean>
+
+    @DELETE("usuarios/borrar/{id}")
+    suspend fun borrarUsuario(@Path("id") id: Int): Response<Boolean>
 }
