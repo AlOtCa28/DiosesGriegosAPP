@@ -50,6 +50,7 @@ dependencies {
     implementation(libs.androidx.navigation.ui.ktx)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
+    implementation("androidx.constraintlayout:constraintlayout:2.1.4")
     androidTestImplementation(libs.androidx.espresso.core)
 
     // Retrofit

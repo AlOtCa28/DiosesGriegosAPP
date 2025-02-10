@@ -1,9 +1,8 @@
 package com.example.diosesgriegosapp.Login
 
 import API.UserNetwork
-import Modelo.Usuario
-import Modelo.UsuarioLogIn
-import android.annotation.SuppressLint
+import Modelo.Usuario.Usuario
+import Modelo.Usuario.UsuarioLogIn
 import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

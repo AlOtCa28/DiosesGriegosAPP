@@ -12,4 +12,12 @@ object UserNetwork {
             .build()
             .create(UsuarioAPI::class.java)
     }
+
+    val retrofitPrueba by lazy {
+        Retrofit.Builder()
+            .baseUrl(Parametros.url+":"+Parametros.puerto)
+            .addConverterFactory(GsonConverterFactory.create())
+            .build()
+            .create(PruebaAPI::class.java)
+    }
 }

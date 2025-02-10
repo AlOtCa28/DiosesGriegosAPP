@@ -1,18 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/mi_nav">
+    android:id="@+id/mi_nav"
+    app:startDestination="@id/navigation_humanos">
 
     <fragment
         android:id="@+id/navigation_humanos"
         android:name= "com.example.diosesgriegosapp.Dioses.DIosesHumanos.FragmentoDiosesHumanos"
         android:label=""
-        tools:layout="@layout/fragment_fragmento_dioses_humanos" />
+        tools:layout="@layout/fragment_fragmento_dioses_humanos" >
+        <action
+            android:id="@+id/action_navigation_humanos_to_navigation_Pruebas"
+            app:destination="@id/navigation_Pruebas" />
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_Pruebas"
         android:name= "com.example.diosesgriegosapp.Dioses.DiosesPruebas.FragmentoDiosesPruebas"
         android:label=""
-        tools:layout="@layout/fragment_fragmento_dioses_pruebas" />
+        tools:layout="@layout/fragment_fragmento_dioses_pruebas" >
+        <action
+            android:id="@+id/action_navigation_Pruebas_to_navigation_humanos"
+            app:destination="@id/navigation_humanos" />
+    </fragment>
 
 </navigation>

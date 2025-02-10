@@ -1,7 +1,8 @@
 package Adaptadores
 
-import Modelo.Usuario
+import Modelo.Usuario.Usuario
 import android.content.Context
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -24,9 +25,12 @@ class MiAdaptadorRV(
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         val usuario = datos[position]
         holder.nombre.text = usuario.nombre
+
+        Log.d("foto", usuario.fotoPerfil.toString())
+
         Glide.with(context)
             .load(usuario.fotoPerfil)
-            .placeholder(R.drawable.placeholder)
+            .centerCrop()
             .into(holder.foto)
     }
 

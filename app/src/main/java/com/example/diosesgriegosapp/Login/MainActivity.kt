@@ -1,7 +1,7 @@
 package com.example.diosesgriegosapp.Login
 
 
-import Modelo.UsuarioLogIn
+import Modelo.Usuario.UsuarioLogIn
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast

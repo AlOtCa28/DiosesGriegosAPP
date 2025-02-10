@@ -1,7 +1,7 @@
 package com.example.diosesgriegosapp.Dioses.DIosesHumanos
 
 import API.UserNetwork
-import Modelo.Usuario
+import Modelo.Usuario.Usuario
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel

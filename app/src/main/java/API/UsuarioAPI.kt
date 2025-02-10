@@ -1,7 +1,7 @@
 package API
 
-import Modelo.Usuario
-import Modelo.UsuarioLogIn
+import Modelo.Usuario.Usuario
+import Modelo.Usuario.UsuarioLogIn
 import retrofit2.Response
 import retrofit2.http.Body
 import retrofit2.http.GET
