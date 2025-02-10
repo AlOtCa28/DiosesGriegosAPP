@@ -1,0 +1,4 @@
+package Adaptadores
+
+class AdaptadorPrueba {
+}
