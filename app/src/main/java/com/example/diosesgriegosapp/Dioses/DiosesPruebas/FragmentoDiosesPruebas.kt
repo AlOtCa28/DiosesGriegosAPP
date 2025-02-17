@@ -4,6 +4,7 @@ import Adaptadores.AdaptadorPrueba
 import Modelo.Prueba.Prueba
 import Modelo.Usuario.Usuario
 import android.annotation.SuppressLint
+import android.content.Intent
 import androidx.fragment.app.viewModels
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -46,6 +47,11 @@ class FragmentoDiosesPruebas : Fragment() {
             datosRepresentar.clear()
             datosRepresentar.addAll(responseList)
             adaptadorRV.notifyDataSetChanged()
+        }
+
+        binding.btnAddPrueba.setOnClickListener {
+            val intent = Intent(requireContext(), CrearPruebasActivity::class.java)
+            startActivity(intent)
         }
     }
 

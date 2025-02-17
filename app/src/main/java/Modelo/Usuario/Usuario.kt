@@ -19,11 +19,11 @@ data class Usuario(
     @SerializedName("rol")
     val rol: Int? = null,
 
-    @SerializedName("foto_perfil")
-    val fotoPerfil: String? = null,
-
     @SerializedName("estado")
     val estado: Int? = null,
+
+    @SerializedName("foto_perfil")
+    val fotoPerfil: String? = null,
 
     @SerializedName("destino")
     val destino: Int? = null

@@ -3,13 +3,16 @@ package com.example.diosesgriegosapp.Dioses.DIosesHumanos
 import Adaptadores.MiAdaptadorRV
 import Modelo.Usuario.Usuario
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.diosesgriegosapp.Dioses.DiosesActivity
 import com.example.diosesgriegosapp.databinding.FragmentFragmentoDiosesHumanosBinding
 
 class FragmentoDiosesHumanos : Fragment() {
@@ -46,6 +49,11 @@ class FragmentoDiosesHumanos : Fragment() {
             datosRepresentar.clear()
             datosRepresentar.addAll(usuarios.filter { it.rol == 2 })
             adaptadorRV.notifyDataSetChanged()
+        }
+
+        binding.btnAddUsuario.setOnClickListener {
+            val intent = Intent(requireContext(), crearUsuariosActivity::class.java)
+            startActivity(intent)
         }
     }
 

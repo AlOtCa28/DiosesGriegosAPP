@@ -40,4 +40,19 @@ class FragmentoDiosesPruebasViewModel : ViewModel() {
             _isLoading.value = false
         }
     }
+
+    fun CrearPruebaVM(prueba: Prueba) {
+        viewModelScope.launch {
+            _isLoading.value = true
+            var response: Response<Prueba> = UserNetwork.retrofitPrueba.registrarPrueba(prueba)
+
+            if (response.isSuccessful) {
+                _resOperacion.value = true
+            } else {
+                _resOperacion.value = false
+                _errorCode.value = response.code()
+            }
+            _isLoading.value = false
+        }
+    }
 }

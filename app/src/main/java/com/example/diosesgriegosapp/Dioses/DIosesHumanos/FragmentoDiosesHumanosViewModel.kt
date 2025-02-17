@@ -57,18 +57,4 @@ class FragmentoDiosesHumanosViewModel : ViewModel() {
         }
     }
 
-    fun getUsuarioPorIdVM(id: Int) {
-        viewModelScope.launch {
-            _isLoading.value = true
-            var response: Response<Usuario> = UserNetwork.retrofit.obtenerUsuarioPorId(id)
-
-            if (response.isSuccessful) {
-                _myResponse.value = listOf(response.body()!!)
-            } else {
-                _myResponse.value = emptyList()
-                _errorCode.value = response.code()
-            }
-            _isLoading.value = false
-        }
-    }
 }
