@@ -40,7 +40,17 @@ class crearUsuariosActivity : AppCompatActivity() {
             if (nombre.isEmpty() || email.isEmpty() || password.isEmpty()) {
                 return@setOnClickListener
             }else{
-                viewModel.CrearUsuarioVM(Usuario(0, nombre, email, password, rol, estado, foto, destino))
+                val usuario = Usuario(
+                    nombre = nombre,
+                    email = email,
+                    contraseña = password,
+                    rol = rol,
+                    fotoPerfil = foto,
+                    estado = estado,
+                    destino = destino
+                )
+                viewModel.CrearUsuarioVM(usuario)
+                finish()
             }
         }
 

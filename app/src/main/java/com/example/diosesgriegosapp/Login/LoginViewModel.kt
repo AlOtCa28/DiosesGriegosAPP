@@ -32,8 +32,6 @@ class LoginViewModel : ViewModel() {
         viewModelScope.launch {
             _isLoading.value = true
 
-            Log.d("LoginViewModel", "loginVM: $userData")
-
             val response: Response<Usuario?> = UserNetwork.retrofit.iniciarSesion(userData)
 
             if (response.isSuccessful) {
@@ -49,19 +47,30 @@ class LoginViewModel : ViewModel() {
 
     fun CrearUsuarioVM(usuario: Usuario) {
         viewModelScope.launch {
+            _isLoading.value = true
+
+            // Log the request data
+            Log.d("CrearUsuarioVM", "Sending user data: $usuario")
+
             val response: Response<Boolean> = UserNetwork.retrofit.registrarUsuario(usuario)
 
             if (response.isSuccessful) {
                 _resOperacion.value = response.body()
-                _errorCode.value = response.code()
-                obtenerTodosLosUsuarios()
+                if (response.body() == true) {
+                    // Usuario creado correctamente
+                    Log.d("CrearUsuarioVM", "Usuario creado correctamente")
+                } else {
+                    // Error al crear el usuario
+                    Log.e("CrearUsuarioVM", "Error al crear el usuario")
+                }
             } else {
                 _resOperacion.value = false
                 _errorCode.value = response.code()
+                Log.e("CrearUsuarioVM", "Error en la respuesta de la API: ${response.code()}")
             }
+            _isLoading.value = false
         }
     }
-
 
     fun obtenerTodosLosUsuarios(){
         viewModelScope.launch {

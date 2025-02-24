@@ -2,6 +2,7 @@ package com.example.diosesgriegosapp.Dioses.DIosesHumanos
 
 import API.UserNetwork
 import Modelo.Usuario.Usuario
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -51,6 +52,21 @@ class FragmentoDiosesHumanosViewModel : ViewModel() {
                 _resOperacion.value = response.body()
             } else {
                 _resOperacion.value = false
+                _errorCode.value = response.code()
+            }
+            _isLoading.value = false
+        }
+    }
+
+    fun obtenerUsuarioPorNombreVM(nombre: String) {
+        viewModelScope.launch {
+            _isLoading.value = true
+            var response: Response<Usuario> = UserNetwork.retrofit.obtenerUsuarioPorNombre(nombre)
+
+            if (response.isSuccessful) {
+                _myResponse.value = listOf(response.body()!!)
+            } else {
+                _myResponse.value = emptyList()
                 _errorCode.value = response.code()
             }
             _isLoading.value = false

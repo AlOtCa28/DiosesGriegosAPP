@@ -16,6 +16,9 @@
         android:theme="@style/Theme.DiosesGriegosAPP"
         tools:targetApi="31">
         <activity
+            android:name=".Humanos.Perfil.PerfilActivity"
+            android:exported="false" />
+        <activity
             android:name=".Dioses.DiosesPruebas.CrearPruebasActivity"
             android:exported="false" />
         <activity

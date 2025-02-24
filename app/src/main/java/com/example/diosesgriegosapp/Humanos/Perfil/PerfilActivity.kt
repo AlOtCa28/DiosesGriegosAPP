@@ -1,33 +1,25 @@
-package com.example.diosesgriegosapp.Humanos
+package com.example.diosesgriegosapp.Humanos.Perfil
 
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
-import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.diosesgriegosapp.R
-import com.example.diosesgriegosapp.databinding.ActivityHumanosBinding
+import com.example.diosesgriegosapp.databinding.ActivityPerfilBinding
 
-class HumanosActivity : AppCompatActivity() {
-    lateinit var binding: ActivityHumanosBinding
-    private val viewModel: HumanosViewModel by viewModels()
+class PerfilActivity : AppCompatActivity() {
+    lateinit var binding: ActivityPerfilBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        binding = ActivityHumanosBinding.inflate(layoutInflater)
+        binding = ActivityPerfilBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-
-        binding.mtbHumanos.inflateMenu(R.menu.menu_hamburguesa)
-
-
-
     }
 }

@@ -8,24 +8,23 @@ data class Usuario(
     val idUsuario: Int? = null,
 
     @SerializedName("nombre")
-    val nombre: String? = null,
+    val nombre: String,
 
     @SerializedName("email")
-    val email: String? = null,
+    val email: String,
 
     @SerializedName("contraseña")
-    val contrasena: String? = null,
+    val contraseña: String,
 
     @SerializedName("rol")
-    val rol: Int? = null,
-
-    @SerializedName("estado")
-    val estado: Int? = null,
+    val rol: Int,
 
     @SerializedName("foto_perfil")
-    val fotoPerfil: String? = null,
+    val fotoPerfil: String,
+
+    @SerializedName("estado")
+    val estado: Int,
 
     @SerializedName("destino")
-    val destino: Int? = null
-
+    val destino: Int
 ) : Serializable

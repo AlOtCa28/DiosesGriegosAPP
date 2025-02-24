@@ -10,8 +10,8 @@ import retrofit2.http.POST
 import retrofit2.http.Path
 
 interface UsuarioAPI {
-    @GET("usuarios/{id}")
-    suspend fun obtenerUsuarioPorId(@Path("id") id: Int): Response<Usuario>
+    @GET("usuarios/{nombre}")
+    suspend fun obtenerUsuarioPorNombre(@Path("nombre") nombre: String): Response<Usuario>
 
     @POST("usuarios/login")
     suspend fun iniciarSesion(@Body usuerData: UsuarioLogIn): Response<Usuario?>
