@@ -12,26 +12,26 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:padding="16dp">
+        android:padding="20dp">
 
         <TextView
             android:id="@+id/txtNombreNuevo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="30dp"
             android:text="Nombre"
             android:textColor="#000"
-            android:textSize="15sp"
-            android:layout_gravity="center_vertical"
-            android:layout_marginStart="8dp" />
+            android:textSize="15sp" />
 
         <Button
             android:id="@+id/btnVer"
-            android:textSize="15sp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
-            android:layout_marginStart="30dp"
-            android:text="VER" />
+            android:layout_marginStart="190dp"
+            android:text="VER"
+            android:textSize="15sp" />
 
     </LinearLayout>
 </androidx.cardview.widget.CardView>

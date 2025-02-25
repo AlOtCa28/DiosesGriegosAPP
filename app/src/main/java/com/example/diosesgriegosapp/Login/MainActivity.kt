@@ -40,7 +40,7 @@ class MainActivity : AppCompatActivity() {
 
         loginViewModel.myResponse.observe(this, Observer { user ->
             user?.let {
-                if (binding.edtNombre.text.isEmpty() || binding.edtEmail.text.isEmpty() || binding.estContra.text.isEmpty()) {
+                if (binding.edtNombre.text.isEmpty() || binding.estContra.text.isEmpty()) {
                     Toast.makeText(this, "Rellena todos los campos", Toast.LENGTH_SHORT).show()
                 } else {
                     val intent = if (it.rol == 1) {
@@ -57,10 +57,10 @@ class MainActivity : AppCompatActivity() {
         })
 
         binding.btnLogin.setOnClickListener {
-            if (binding.edtEmail.text.isEmpty() || binding.edtNombre.text.isEmpty() || binding.estContra.text.isEmpty()) {
+            if (binding.edtNombre.text.isEmpty() || binding.estContra.text.isEmpty()) {
                 Toast.makeText(this, "Rellena todos los campos", Toast.LENGTH_SHORT).show()
             } else {
-                loginViewModel.loginVM(UsuarioLogIn(binding.edtNombre.text.toString(), binding.edtEmail.text.toString() ,binding.estContra.text.toString()))
+                loginViewModel.loginVM(UsuarioLogIn(binding.edtNombre.text.toString(),binding.estContra.text.toString()))
             }
         }
 
@@ -82,7 +82,6 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun limpiar() {
-        binding.edtEmail.text.clear()
         binding.edtNombre.text.clear()
         binding.estContra.text.clear()
     }

@@ -7,7 +7,8 @@
     android:layout_height="match_parent"
     tools:context=".Humanos.Perfil.PerfilActivity"
     tools:layout_editor_absoluteX="3dp"
-    tools:layout_editor_absoluteY="69dp">
+    tools:layout_editor_absoluteY="69dp"
+    android:name=".Humanos.Perfil.PerfilActivity">
 
     <EditText
         android:id="@+id/edtContraPerfil"
@@ -96,7 +97,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btnGuardarFoto"
         android:layout_width="161dp"
         android:layout_height="50dp"
         android:layout_marginTop="208dp"
@@ -109,13 +110,13 @@
         android:id="@+id/edtDestinoNuevo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="56dp"
-        android:layout_marginBottom="151dp"
+        android:layout_marginTop="536dp"
+        android:layout_marginEnd="64dp"
         android:ems="10"
         android:enabled="false"
         android:inputType="number"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/btnGuardar"
@@ -128,7 +129,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/btnSalirPerfil"
         android:layout_width="132dp"
         android:layout_height="51dp"
         android:layout_marginEnd="48dp"

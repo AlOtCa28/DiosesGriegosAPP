@@ -16,10 +16,23 @@ class PerfilActivity : AppCompatActivity() {
         enableEdgeToEdge()
         binding = ActivityPerfilBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
+        }
+
+        binding.btnSalirPerfil.setOnClickListener {
+            finish()
+        }
+
+        binding.btnGuardarFoto.setOnClickListener {
+            // Lógica para cambiar la foto de perfil
+        }
+
+        binding.btnGuardar.setOnClickListener {
+            // Lógica para guardar los cambios del perfil
         }
     }
 }
