@@ -32,10 +32,14 @@ class LoginViewModel : ViewModel() {
         viewModelScope.launch {
             _isLoading.value = true
 
+
+            Log.d("LoginViewModel", "Sending user data: $userData")
+
             val response: Response<Usuario?> = UserNetwork.retrofit.iniciarSesion(userData)
 
             if (response.isSuccessful) {
                 _myResponse.value = response.body()
+                Log.d("LoginViewModel", "User data received: ${response.body()}")
                 _errorCode.value = response.code()
             } else {
                 _myResponse.value = null

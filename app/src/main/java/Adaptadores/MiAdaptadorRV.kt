@@ -26,8 +26,6 @@ class MiAdaptadorRV(
         val usuario = datos[position]
         holder.nombre.text = usuario.nombre
 
-        Log.d("foto", usuario.fotoPerfil.toString())
-
         Glide.with(context)
             .load(usuario.fotoPerfil)
             .centerCrop()
