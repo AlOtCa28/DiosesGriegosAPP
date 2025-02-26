@@ -26,6 +26,8 @@ class PerfilActivityViewModel : ViewModel() {
     private val _errorCode = MutableLiveData<Int?>()
     val errorCode: LiveData<Int?> get() = _errorCode
 
+    var errorMessage: String? = null
+
     fun obtenerUsuarioPorNombreVM(nombre: String) {
         viewModelScope.launch {
             _isLoading.value = true
@@ -38,6 +40,25 @@ class PerfilActivityViewModel : ViewModel() {
                 _errorCode.value = response.code()
             }
             _isLoading.value = false
+        }
+    }
+
+    fun actualizarUsuarioVM(id: Int) {
+        viewModelScope.launch {
+            _isLoading.value = true
+            try {
+                var response: Response<Boolean> = UserNetwork.retrofit.actualizarUsuario(id)
+
+                if (response.isSuccessful) {
+                    _resOperacion.value = true
+                } else {
+                    errorMessage = response.errorBody()?.string()
+                    _resOperacion.value = false
+                }
+            } catch (e: Exception) {
+                errorMessage = e.message
+                _resOperacion.value = false
+            }
         }
     }
 }

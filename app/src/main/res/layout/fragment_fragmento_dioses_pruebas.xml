@@ -12,14 +12,15 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="19dp"
         android:layout_marginEnd="177dp"
-        android:text="PRUEBAS"
+        android:text="@string/PRUEBAS"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/RvPruebas"
-        android:layout_width="409dp"
-        android:layout_height="517dp"
+        android:layout_width="412dp"
+        android:layout_height="533dp"
         android:layout_marginTop="56dp"
         android:layout_marginEnd="1dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -27,11 +28,17 @@
 
     <Button
         android:id="@+id/btnAddPrueba"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="124dp"
-        android:layout_marginBottom="72dp"
-        android:text="AÑADIR PRUEBA"
+        style="@style/Widget.Material3.Button.ElevatedButton.Icon"
+        android:layout_width="167dp"
+        android:layout_height="49dp"
+        android:layout_margin="16dp"
+        android:layout_marginTop="40dp"
+        android:text="@string/CREARPRUEBAS"
+        app:icon="@drawable/add_24"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/RvPruebas"
+        app:layout_constraintVertical_bias="0.792" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

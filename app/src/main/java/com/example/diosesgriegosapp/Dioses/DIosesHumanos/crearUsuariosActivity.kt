@@ -1,6 +1,8 @@
 package com.example.diosesgriegosapp.Dioses.DIosesHumanos
 
+import Modelo.Humano.Humano
 import Modelo.Usuario.Usuario
+import Parametros.Parametros
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
@@ -11,10 +13,13 @@ import com.example.diosesgriegosapp.Login.LoginViewModel
 import com.example.diosesgriegosapp.R
 import com.example.diosesgriegosapp.databinding.ActivityCrearUsuariosBinding
 import com.example.diosesgriegosapp.databinding.ActivityMainBinding
+import retrofit2.http.Body
+import kotlin.random.Random
 
 class crearUsuariosActivity : AppCompatActivity() {
-    private lateinit var binding : ActivityCrearUsuariosBinding
+    private lateinit var binding: ActivityCrearUsuariosBinding
     private val viewModel: LoginViewModel by viewModels()
+    private val OtroViewModel: FragmentoDiosesHumanosViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -37,9 +42,10 @@ class crearUsuariosActivity : AppCompatActivity() {
             val foto = binding.edtFoto.text.toString()
             val destino = binding.edtDestino.text.toString().toInt()
 
+
             if (nombre.isEmpty() || email.isEmpty() || password.isEmpty()) {
                 return@setOnClickListener
-            }else{
+            } else {
                 val usuario = Usuario(
                     nombre = nombre,
                     email = email,
@@ -49,6 +55,7 @@ class crearUsuariosActivity : AppCompatActivity() {
                     estado = estado,
                     destino = destino
                 )
+
                 viewModel.CrearUsuarioVM(usuario)
                 finish()
             }

@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Dioses.DiosesPruebas.PruebaDetalleActivity">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvUsuariosPrueba"
+        android:layout_width="411dp"
+        android:layout_height="365dp"
+        android:layout_marginTop="1dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/edtTipoPrueba"
+        android:layout_width="236dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="392dp"
+        android:layout_marginEnd="36dp"
+        android:enabled="false"
+        android:hint="TipoPrueba"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView25"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="612dp"
+        android:layout_marginEnd="312dp"
+        android:text="Impacto"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/edtDificultadPrueba"
+        android:layout_width="234dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="524dp"
+        android:layout_marginEnd="36dp"
+        android:enabled="false"
+        android:hint="Dificultad"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView23"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="472dp"
+        android:layout_marginEnd="304dp"
+        android:text="Descripcion"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/edtImpactoPrueba"
+        android:layout_width="234dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="592dp"
+        android:layout_marginEnd="40dp"
+        android:enabled="false"
+        android:hint="Impacto"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/edtDescripcionpRUEBA"
+        android:layout_width="234dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="460dp"
+        android:layout_marginEnd="40dp"
+        android:enabled="false"
+        android:hint="Descripcion"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView24"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="540dp"
+        android:layout_marginEnd="312dp"
+        android:text="Dificultad"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="404dp"
+        android:layout_marginEnd="304dp"
+        android:text="Tipo Prueba"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnGuardarPrueba"
+        style="@style/Widget.Material3.Button.ElevatedButton.Icon"
+        android:layout_width="167dp"
+        android:layout_height="49dp"
+        android:layout_margin="16dp"
+        android:layout_marginBottom="16dp"
+        android:text="Asignar Prueba"
+        app:icon="@drawable/add_24"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btnCancelarPrueba"
+        style="@style/Widget.Material3.Button.ElevatedButton.Icon"
+        android:layout_width="167dp"
+        android:layout_height="49dp"
+        android:layout_margin="16dp"
+        android:layout_marginBottom="16dp"
+        android:text="Cancelar"
+        app:icon="@drawable/cancel_24"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -4,7 +4,7 @@ import com.google.gson.annotations.SerializedName
 import java.io.Serializable
 
 data class Usuario(
-    @SerializedName("id_usuario")
+    @SerializedName("idUsuario")
     val idUsuario: Int? = null,
 
     @SerializedName("nombre")
@@ -19,7 +19,7 @@ data class Usuario(
     @SerializedName("rol")
     val rol: Int,
 
-    @SerializedName("foto_perfil")
+    @SerializedName("fotoPerfil")
     val fotoPerfil: String,
 
     @SerializedName("estado")

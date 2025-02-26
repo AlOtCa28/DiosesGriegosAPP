@@ -1,11 +1,8 @@
 package Adaptadores
 
-
 import Modelo.Prueba.Prueba
-import Modelo.Usuario.Usuario
 import android.content.Context
 import android.content.Intent
-import android.service.autofill.OnClickAction
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -14,26 +11,19 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.diosesgriegosapp.Dioses.DiosesPruebas.PruebaDetalleActivity
 import com.example.diosesgriegosapp.R
 
-class AdaptadorPrueba(
+class AdaptadorPruebaHumano (
     private var context: Context,
     private var datos: ArrayList<Prueba>
-) : RecyclerView.Adapter<AdaptadorPrueba.MyViewHolder>() {
+) : RecyclerView.Adapter<AdaptadorPruebaHumano.MyViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
-        val v = LayoutInflater.from(parent.context).inflate(R.layout.item_card_prueba, parent, false)
+        val v = LayoutInflater.from(parent.context).inflate(R.layout.item_card_prueba_humanos, parent, false)
         return MyViewHolder(v)
     }
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         val prueba = datos[position]
         holder.descr.text = prueba.descripcion
-        holder.tipo.text = prueba.tipoPrueba
-
-        holder.itemView.setOnClickListener {
-            val intent = Intent(context, PruebaDetalleActivity::class.java)
-            intent.putExtra("prueba", prueba)
-            context.startActivity(intent)
-        }
     }
     override fun getItemCount(): Int {
         return datos.size
@@ -41,7 +31,6 @@ class AdaptadorPrueba(
 
     inner class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         var descr: TextView = itemView.findViewById<View>(R.id.txtNombreNuevo) as TextView
-        var tipo : TextView = itemView.findViewById<View>(R.id.txtTipo) as TextView
     }
 
 }

@@ -20,4 +20,20 @@ object UserNetwork {
             .build()
             .create(PruebaAPI::class.java)
     }
+
+    val retrofitDios by lazy {
+        Retrofit.Builder()
+            .baseUrl(Parametros.url+":"+Parametros.puerto)
+            .addConverterFactory(GsonConverterFactory.create())
+            .build()
+            .create(DiosAPI::class.java)
+    }
+
+    val retrofitHumano by lazy {
+        Retrofit.Builder()
+            .baseUrl(Parametros.url+":"+Parametros.puerto)
+            .addConverterFactory(GsonConverterFactory.create())
+            .build()
+            .create(HumanoAPI::class.java)
+    }
 }

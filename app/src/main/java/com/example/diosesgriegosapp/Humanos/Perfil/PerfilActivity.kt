@@ -33,6 +33,7 @@ class PerfilActivity : AppCompatActivity() {
         Parametros.usuarioLogeado?.let { viewModel.obtenerUsuarioPorNombreVM(it) }
         viewModel.myResponse.observe(this) { usuario ->
             usuario?.let {
+                Glide.with(this).load(it.fotoPerfil).into(binding.ImagenPerfil)
                 binding.edtNombrePerfil.setText(it.nombre)
                 binding.edtEmailPerfil.setText(it.email)
                 binding.edtContraPerfil.setText(it.contraseña)
@@ -46,11 +47,32 @@ class PerfilActivity : AppCompatActivity() {
         }
 
         binding.btnGuardarFoto.setOnClickListener {
-            // Lógica para cambiar la foto de perfil
         }
 
         binding.btnGuardar.setOnClickListener {
-            // Lógica para guardar los cambios del perfil
+            val nombre = binding.edtNombrePerfil.text.toString()
+            val email = binding.edtEmailPerfil.text.toString()
+            val password = binding.edtContraPerfil.text.toString()
+            val destino = binding.edtDestinoNuevo.text.toString().toIntOrNull()
+
+            if (nombre.isNotEmpty() && email.isNotEmpty() && password.isNotEmpty() && destino != null) {
+                viewModel.myResponse.value?.let {
+                    val usuario = it.copy(nombre = nombre, email = email, contraseña = password, destino = destino)
+                    usuario.idUsuario?.let { id ->
+                        viewModel.actualizarUsuarioVM(id)
+                        viewModel.resOperacion.observe(this) { success ->
+                            if (success) {
+                                Log.d("PerfilActivity", "Usuario actualizado")
+                            } else {
+                                Log.d("PerfilActivity", "Error al actualizar usuario: ${viewModel.errorMessage}")
+                            }
+                        }
+                    }
+                }
+                finish()
+            } else {
+                Log.d("PerfilActivity", "No se pudo actualizar el usuario: campos incompletos o inválidos")
+            }
         }
     }
 }

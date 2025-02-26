@@ -3,18 +3,18 @@ package Modelo.Prueba
 import com.google.gson.annotations.SerializedName
 
 data class PruebaAsignada(
-    @SerializedName("id_asignacion")
+    @SerializedName("idAsignacion")
     val idPruebaAsignada: Int? = null,
 
-    @SerializedName("id_prueba")
+    @SerializedName("idPrueba")
     val idPrueba: Int,
 
-    @SerializedName("id_humano")
+    @SerializedName("idHumano")
     val idHumano: Int,
 
     @SerializedName("resultado")
     val resultado: Int,
 
-    @SerializedName("fecha_asignacion")
+    @SerializedName("fechaAsignacion")
     val fechaAsignacion: String
 )

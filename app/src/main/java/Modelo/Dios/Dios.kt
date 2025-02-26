@@ -1,6 +1,7 @@
 package Modelo.Dios
 
 import com.google.gson.annotations.SerializedName
+import java.io.Serializable
 
 data class Dios(
     @SerializedName("id_dios")
@@ -20,4 +21,4 @@ data class Dios(
 
     @SerializedName("audacia")
     val audacia: Int,
-)
+) : Serializable

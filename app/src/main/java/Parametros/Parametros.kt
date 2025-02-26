@@ -5,4 +5,6 @@ object Parametros {
     val puerto = 8090
 
     var usuarioLogeado: String? = null
+
+    var usuarioLogeadoId: Int? = null
 }

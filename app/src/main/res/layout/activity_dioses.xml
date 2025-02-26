@@ -8,9 +8,9 @@
     tools:context=".Dioses.DiosesActivity">
 
     <FrameLayout
-        android:layout_width="409dp"
-        android:layout_height="592dp"
-        android:layout_marginTop="72dp"
+        android:layout_width="412dp"
+        android:layout_height="597dp"
+        android:layout_marginTop="64dp"
         android:layout_marginEnd="1dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -27,8 +27,8 @@
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/btvMenu"
-        android:layout_width="410dp"
-        android:layout_height="66dp"
+        android:layout_width="411dp"
+        android:layout_height="71dp"
         android:layout_marginEnd="1dp"
         android:layout_marginBottom="1dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -37,11 +37,13 @@
 
     <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/mtbMenu"
-        android:layout_width="412dp"
-        android:layout_height="74dp"
+        android:layout_width="411dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="16dp"
         android:background="?attr/colorPrimary"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

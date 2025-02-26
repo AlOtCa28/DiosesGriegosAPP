@@ -43,12 +43,14 @@ class FragmentoDiosesHumanos : Fragment() {
 
         setupRecyclerView()
 
+
         diosesHumanosViewModel.getUsuariosVM()
 
         diosesHumanosViewModel.myResponseList.observe(viewLifecycleOwner) { usuarios ->
             datosRepresentar.clear()
             datosRepresentar.addAll(usuarios.filter { it.rol == 2 })
             adaptadorRV.notifyDataSetChanged()
+
         }
 
         binding.btnAddUsuario.setOnClickListener {

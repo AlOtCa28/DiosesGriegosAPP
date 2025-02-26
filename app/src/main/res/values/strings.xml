@@ -5,4 +5,22 @@
     <string name="login">Iniciar Sesión</string>
     <string name="Salir">Salir</string>
     <string name="Usuario">Usuario</string>
+    <string name="SALIR">SALIR</string>
+    <string name="USUARIOS">USUARIOS</string>
+    <string name="HUMANOS">HUMANOS</string>
+    <string name="AñadirUsuario">Añadir Usuario</string>
+    <string name="GUARDAR">GUARDAR</string>">
+    <string name="CAMBIARFOTO">CAMBIAR FOTO</string>
+    <string name="NOMBRE">NOMBRE</string>
+    <string name="CORREO">CORREO</string>
+    <string name="CONTRASEÑA">CONTRASEÑA</string>
+    <string name="ROL">ROL</string>
+    <string name="FOTO">FOTO</string>
+    <string name="DESTINO">DESTINO</string>
+    <string name="DIOSES">DIOSES</string>
+    <string name="CREARPRUEBAS">CREAR PRUEBAS</string>
+    <string name="PRUEBAS">PRUEBAS</string>
+    <string name="TIPOPRUEBA">TIPO PRUEBA</string>
+    <string name="DESCRIPCION">DESCRIPCION</string>
+    <string name="PREGUNTAS">PREGUNTAS</string>
 </resources>

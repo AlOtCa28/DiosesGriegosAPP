@@ -46,15 +46,19 @@ class FragmentoDiosesHumanosViewModel : ViewModel() {
     fun borrarUsuarioVM(id: Int) {
         viewModelScope.launch {
             _isLoading.value = true
-            var response: Response<Boolean> = UserNetwork.retrofit.borrarUsuario(id)
-
-            if (response.isSuccessful) {
-                _resOperacion.value = response.body()
-            } else {
+            try {
+                val response: Response<Boolean> = UserNetwork.retrofit.borrarUsuario(id)
+                if (response.isSuccessful) {
+                    _resOperacion.value = response.body()
+                } else {
+                    _resOperacion.value = false
+                    _errorCode.value = response.code()
+                }
+            } catch (e: Exception) {
                 _resOperacion.value = false
-                _errorCode.value = response.code()
+            } finally {
+                _isLoading.value = false
             }
-            _isLoading.value = false
         }
     }
 

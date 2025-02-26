@@ -19,6 +19,9 @@ interface UsuarioAPI {
     @GET("usuarios/listado")
     suspend fun listarUsuarios(): Response<MutableList<Usuario>>
 
+    @GET("usuarios/actualizar/{id}")
+    suspend fun actualizarUsuario(@Path("id") id: Int): Response<Boolean>
+
     @POST("usuarios/registrar")
     suspend fun registrarUsuario(@Body usuario: Usuario): Response<Boolean>
 

@@ -40,7 +40,7 @@ class MainActivity : AppCompatActivity() {
 
         loginViewModel.myResponse.observe(this, Observer { user ->
             user?.let {
-                if (binding.edtNombre.text.isEmpty() || binding.estContra.text.isEmpty()) {
+                if (binding.edtNombre.text?.isEmpty() != false || binding.estContra.text?.isEmpty() != false) {
                     Toast.makeText(this, "Rellena todos los campos", Toast.LENGTH_SHORT).show()
                 } else {
                     val intent = if (it.rol == 1) {
@@ -49,6 +49,7 @@ class MainActivity : AppCompatActivity() {
                         Intent(this, HumanosActivity::class.java)
                     }
                     startActivity(intent)
+                    Parametros.Parametros.usuarioLogeadoId = it.idUsuario
                     Parametros.Parametros.usuarioLogeado = binding.edtNombre.text.toString()
                     limpiar()
                     loginViewModel.limpiarRespuesta()
@@ -57,7 +58,7 @@ class MainActivity : AppCompatActivity() {
         })
 
         binding.btnLogin.setOnClickListener {
-            if (binding.edtNombre.text.isEmpty() || binding.estContra.text.isEmpty()) {
+            if (binding.edtNombre.text?.isEmpty() != false || binding.estContra.text?.isEmpty() != false) {
                 Toast.makeText(this, "Rellena todos los campos", Toast.LENGTH_SHORT).show()
             } else {
                 loginViewModel.loginVM(UsuarioLogIn(binding.edtNombre.text.toString(),binding.estContra.text.toString()))
@@ -82,7 +83,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun limpiar() {
-        binding.edtNombre.text.clear()
-        binding.estContra.text.clear()
+        binding.edtNombre.text?.clear()
+        binding.estContra.text?.clear()
     }
 }

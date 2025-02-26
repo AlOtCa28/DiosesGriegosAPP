@@ -6,18 +6,21 @@
     android:layout_height="match_parent"
     tools:context=".Dioses.DIosesHumanos.FragmentoDiosesHumanos">
 
+
     <Button
         android:id="@+id/btnAddUsuario"
+        style="@style/Widget.Material3.Button.ElevatedButton.Icon"
         android:layout_width="167dp"
         android:layout_height="49dp"
         android:layout_margin="16dp"
         android:layout_marginTop="40dp"
-        android:text="Añadir usuario"
+        android:text="@string/AñadirUsuario"
+        app:icon="@drawable/add_24"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/RVListaPersonas"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.31" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/RVListaPersonas"
@@ -34,7 +37,7 @@
         android:layout_width="358dp"
         android:layout_height="33dp"
         android:layout_marginTop="16dp"
-        android:text="HUMANOS"
+        android:text="@string/HUMANOS"
         android:textAlignment="center"
         android:textSize="14sp"
         app:layout_constraintBottom_toTopOf="@+id/RVListaPersonas"

@@ -1,6 +1,7 @@
 package com.example.diosesgriegosapp.Login
 
 import API.UserNetwork
+import Modelo.Humano.Humano
 import Modelo.Usuario.Usuario
 import Modelo.Usuario.UsuarioLogIn
 import android.util.Log
@@ -53,28 +54,59 @@ class LoginViewModel : ViewModel() {
         viewModelScope.launch {
             _isLoading.value = true
 
-            // Log the request data
-            Log.d("CrearUsuarioVM", "Sending user data: $usuario")
-
             val response: Response<Boolean> = UserNetwork.retrofit.registrarUsuario(usuario)
 
             if (response.isSuccessful) {
                 _resOperacion.value = response.body()
                 if (response.body() == true) {
-                    // Usuario creado correctamente
-                    Log.d("CrearUsuarioVM", "Usuario creado correctamente")
                 } else {
-                    // Error al crear el usuario
                     Log.e("CrearUsuarioVM", "Error al crear el usuario")
                 }
             } else {
                 _resOperacion.value = false
                 _errorCode.value = response.code()
-                Log.e("CrearUsuarioVM", "Error en la respuesta de la API: ${response.code()}")
             }
             _isLoading.value = false
         }
     }
+
+
+    fun registrarHumanoVM(humano: Humano) {
+        viewModelScope.launch {
+            _isLoading.value = true
+            try {
+                val response: Response<Boolean> = UserNetwork.retrofitHumano.registrarHumano(humano)
+                if (response.isSuccessful) {
+                    _resOperacion.value = response.body()
+                } else {
+                    _resOperacion.value = false
+                    _errorCode.value = response.code()
+                }
+            } catch (e: Exception) {
+                _resOperacion.value = false
+            } finally {
+                _isLoading.value = false
+            }
+        }
+    }
+
+    fun CrearUsuarioYHumanoVM(usuario: Usuario, humano: Humano) {
+        viewModelScope.launch {
+            _isLoading.value = true
+
+            val responseUsuario: Response<Boolean> = UserNetwork.retrofit.registrarUsuario(usuario)
+
+            if (responseUsuario.isSuccessful && responseUsuario.body() == true) {
+                val responseHumano: Response<Boolean> = UserNetwork.retrofitHumano.registrarHumano(humano)
+                _resOperacion.value = responseHumano.isSuccessful && responseHumano.body() == true
+            } else {
+                _resOperacion.value = false
+            }
+
+            _isLoading.value = false
+        }
+    }
+
 
     fun obtenerTodosLosUsuarios(){
         viewModelScope.launch {

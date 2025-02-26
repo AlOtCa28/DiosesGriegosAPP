@@ -6,4 +6,22 @@
     <string name="login">Login</string>
     <string name="Salir">Go Out</string>
     <string name="Usuario">User</string>
+    <string name="SALIR">Go Out</string>
+    <string name="USUARIOS">USERS</string>
+    <string name="HUMANOS">Humans</string>
+    <string name="AñadirUsuario">Add User</string>
+    <string name="GUARDAR">SAVE</string>
+    <string name="CAMBIARFOTO">Change Photo</string>
+    <string name="NOMBRE">NAME</string>
+    <string name="CORREO">EMAIL</string>
+    <string name="CONTRASEÑA">PASSWORD</string>
+    <string name="ROL">ROL</string>
+    <string name="FOTO">PHOTO</string>
+    <string name="DESTINO">DESTINY</string>
+    <string name="DIOSES">GODS</string>
+    <string name="CREARPRUEBAS">ADD TASK</string>
+    <string name="PRUEBAS">TASKs</string>
+    <string name="TIPOPRUEBA">TASK TYPE</string>
+    <string name="DESCRIPCION">DESCRIPTION</string>
+    <string name="PREGUNTAS">QUESTION</string>
 </resources>
