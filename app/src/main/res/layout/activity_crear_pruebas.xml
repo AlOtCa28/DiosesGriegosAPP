@@ -53,7 +53,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="148dp"
         android:layout_marginEnd="300dp"
-        android:text="DESCRIPCION:"
+        android:text="@string/DESCRIPCION"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -69,7 +69,8 @@
         android:inputType="textMultiLine"
         android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="RtlCompat" />
 
     <TextView
         android:id="@+id/textView15"
@@ -77,7 +78,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="52dp"
         android:layout_marginEnd="300dp"
-        android:text="TIPO PRUEBA"
+        android:text="@string/TIPOPRUEBA"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -152,7 +153,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="240dp"
         android:layout_marginBottom="32dp"
-        android:text="CANCELAR"
+        android:text="@string/SALIR"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -162,7 +163,7 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="208dp"
         android:layout_marginBottom="32dp"
-        android:text="CREAR PRUEBA"
+        android:text="@string/CREARPRUEBAS"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
